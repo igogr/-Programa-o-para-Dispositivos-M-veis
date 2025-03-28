@@ -1,13 +1,14 @@
-import { StyleSheet, Text, View, Button } from 'react-native'
 import React from 'react'
+import { StyleSheet, Text, View, Button } from 'react-native'
 
 export default function JavascriptComponente() {
 
-  const nome = "Gustavo"
-  const idade = 16
+  const nome = "Gustavo Clay"
+  const idade = 15
 
-  function checkMaiorIdade() {
-    if(idade >= 18){
+  function checarMaiorIdade() {
+    console.log("Chamou a função checarMaiorIdade")
+    if (idade >= 18) {
       return "Maior de Idade"
     } else {
       return "Menor de Idade"
@@ -15,23 +16,26 @@ export default function JavascriptComponente() {
   }
 
   function alerta() {
+    console.log("Chamou a função alerta")
     alert("Clicou no botão!!!!")
   }
 
 
   return (
-    <View>
-      <Text>JavaScript Componente</Text>
-
-      <Text>NOME: {nome}</Text>
-      <Text>IDADE: {idade}</Text>
-      <Text>IDADE+40: {idade + 40}</Text>
-      <Text>É maior de idade? {checkMaiorIdade()}</Text>
-      <Text>Check: {idade >= 18 ? "18+" : "18-"}</Text>
-      <Button title='Clicar' onPress={alerta}></Button>
+    <View style={styles.container}>
+      <Text>JavascriptComponente</Text>
+      <Text>Nome: {nome}</Text>
+      <Text>Idade: {idade}</Text>
+      <Text>Idade+40: {idade + 40}</Text>
+      <Text>18+: {checarMaiorIdade()}</Text>
+      <Button title='Clicar' onPress={alerta} />
 
     </View>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "yellow"
+  }
+})
